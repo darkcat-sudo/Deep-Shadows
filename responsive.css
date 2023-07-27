@@ -1,0 +1,195 @@
+
+/*small screen*/
+@media only screen and (max-width: 600px)
+{
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+    }
+    html {
+        height: 100%;
+    }
+    #ny{
+      overflow-y: hidden;
+        
+    }
+    body{
+        width: 100%;
+        min-height: 100vh;
+         
+    }
+    /* #loding{
+        position: fixed;
+    top: -93px;
+    width: 100%;
+    height: 115vh;
+    background: #fff url(https://drive.google.com/uc?export=download&id=1zenv7hNx8PIRp7QfNt9kGl9DfilTTTjO) no-repeat center;
+    z-index: 100;
+    background-size: 40px;
+             } */
+    
+   
+    .navbar{
+       
+      position: fixed;
+      background-color: yellow;
+      width: 100%;
+      top: -1px;
+      height: 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+
+    }
+    .logo{
+      font-family: Heavitas;
+    padding: 0px 21px;
+    font-size: 27px;
+    color: black;
+ }
+    .burger{
+      display: grid;
+    place-items: center;
+    height: 54px;
+    width: 65px;
+    transition: background 1s;
+        
+    }
+    .burger svg{
+      
+    transition-duration: 1s; 
+    }
+    
+    .onburger{
+      background: #0000000f !important;
+     
+
+    }
+    
+    .onburger svg{
+    transform: rotate(90deg);
+     
+    
+    }
+    .list{
+      display: none;
+    }
+    .lis{
+      display: none;
+    }
+    .mhome{
+      filter: invert(1);
+    }
+  .p{
+    height: 54px;
+    width: 0px;
+    opacity: 0px;
+  }
+    
+  .listr{
+     
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 97;
+    background: #ffffff87;
+    backdrop-filter: blur(9px) !important;
+    box-shadow: -4px 0px 50px 0px black;
+    height: 100vh;
+    width: 66%;
+    right: 0px !important;
+  }
+  .listtop{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 433px;
+    transition-duration: 1s;
+  }
+  .listtop a{
+    background-color: #ffffff;
+    border-radius: 9px;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 20px;
+    width: 65%;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    transition-duration: 1s;
+  }
+  .listt{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 97;
+    background: #ffffff87;
+    backdrop-filter: blur(0.6px);
+    box-shadow: -4px 0px 50px 0px black;
+    height: 100vh;
+    width: 66%;
+    right: -388px;
+    transition-duration: 800ms;
+  }
+  .theme{
+    flex-grow: 0.28;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .vuj{
+    width: 73%;
+    transition-duration: 1s;
+    border-radius: 9px;
+  }
+  .buj{
+    filter: invert(1);
+  }
+  .l{
+    width: 0px;
+    height: 55px;
+    opacity: 0;
+  }
+
+  .bac{
+    display:none;
+  }
+  .backbt{
+    min-width: 100%;
+    opacity: 1;
+    height: 100vh;
+    background: #0000002b;
+    position: fixed;
+    z-index: 95;
+    display: block !important;
+  }
+  #dut{
+      display: none;
+  }
+  #duti{
+       position: fixed;
+  }
+  .yui{
+      height: 400px;
+      width: 400px;
+  }
+  
+
+
+  /*   explore winddow css*/
+
+
+
+
+}

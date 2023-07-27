@@ -1,62 +1,88 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
-header {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
+/*lagrge screen*/
+@media only screen and (min-width: 600px){
+    *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        
+    }
+    #dut{
+        display: none;
+    }
+    
+ /*    #loding{
+        position: fixed;
+        bottom: -96px;
+        width: 100%;
+        height: 141vh;
+        background: #fff url(https://drive.google.com/uc?export=download&id=1zenv7hNx8PIRp7QfNt9kGl9DfilTTTjO) no-repeat center;
+        z-index: 100;
+        background-size: 47px 60px;
+    } */
+    #ny{
+       overflow-y: hidden;
+    }
+    @font-face {
+        font-family:Heavitas;
+        src: url(files/Heavitas.ttf);
+    }
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: 56px;
+        background-color: rgb(163, 224, 235);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 223px;
+        z-index: 99;
+    
+       
+    }
+    .list{
+        display: none;
+    }
+    .logo{
+        font-family: Heavitas;
+        padding: 6px 14px;
+        font-size: 34.6px;
+        color: black;
+        background: yellow;
+    }
+        
+    .burger{
+        display: none;
+    }
+   .lis a:hover{
+      color: red;
+      background-color: white;
+      transition: 0.95s;
+        }
+        .lis{
+            display: flex;
+            
+        }
+        .lis a{
+            padding: 4px 16px;
+            border: 2px solid white;
+            color: rgb(97, 52, 52);
+            border-radius: 5px;
+            font-size: 17px;
+            margin-right: 12px;
+            
+        }
+        .home{
+            color: red !important;
+            background-color: white;
+            
+        }
+    /*   explore winddow css*/     
+       
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-right: auto;
-    padding: 5px;
-}
+    
 
-.search-bar {
-    display: flex;
-    align-items: center;
-}
 
-.search-bar input[type="text"] {
-    padding: 5px;
-    margin-right: 5px;
-}
-
-.search-bar button {
-    padding: 5px 10px;
-    background-color: #ffffff;
-    border: none;
-    cursor: pointer;
-}
-
-main {
-    padding: 20px;
-}
-
-.video {
-    display: inline-block;
-    width: 300px;
-    margin: 10px;
-}
-
-.video img {
-    width: 100%;
-}
-
-.video h2 {
-    font-size: 16px;
-    margin: 5px 0;
-}
-
-.video p {
-    font-size: 14px;
-    color: #666666;
-    margin: 0;
-}
+} 
