@@ -291,6 +291,20 @@
     width: 320px;
     border-radius: 14px;
 }
+.playbt{
+  width: 320px;
+  height: 180px;
+  position: absolute;
+}
+
+.play-button{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 29%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+}
 
 
 }
