@@ -91,4 +91,14 @@ function themee() {
   child2.classList.toggle("lnavbar");
 }
 /* Add Contant */
+export async function onRequest(context) {
+  // Create a prepared statement with our query
+  const ps = context.env.var_r.prepare('SELECT * from users');
+  const data = await ps.first();
+
+  // Print the data to the server logs or console
+  console.log(data);
+
+  return Response.json(data);
+}
 
