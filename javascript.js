@@ -99,6 +99,7 @@ const links = document.querySelectorAll(".downdis");
       
     });
   });
+<<<<<<< HEAD
 /* Add Contant */
 /* sending id  src to videoplayer page */
 const playcontElements = document.querySelectorAll(".playcont");
@@ -118,3 +119,6 @@ function sendIdToPage2(id) {
     window.location.href = 'videoplayer/index.html';
 }
 
+=======
+/* Add Contant */
+>>>>>>> 66f71ed97c751de0aa04b25e6b6fc26848c23d58
