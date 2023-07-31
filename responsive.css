@@ -53,7 +53,7 @@
       align-items: center;
       gap: 3px;
       z-index: 99;
-      border-top: 1px solid var(--inside-color);
+      border-top: 2px solid var(--inside-color);
       border-bottom: 0.3px solid var(--inside-color);
       border-left: none;
       border-right: none;
@@ -272,50 +272,105 @@
   }
 
 }
-.title{
-    color: var(--lmid-color);
-    max-width: 295px;
-    max-height: 38px;
-    overflow-y: hidden;
-    font-size: 16px;
-}
-.source{
-    color: var(--lmid-color);
-    opacity: 0.7;
-    max-width: 198px;
-    font-size: 12px;
-    padding: 1px 6px;
-    position: relative;
-    right: 92px;
-    top: -7px;
-}
+
+/* paste css of mobile */
 .video-thumnail{
-    width: 337px;
-    height: 270px;
-    background-color: var(--main-color);
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
+  height: 342px;
+  width: 360px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  position: relative;
 
-}
-.video{
-    height: 180px;
-    width: 320px;
-    border-radius: 14px;
-}
-.playbt{
-  width: 320px;
-  height: 180px;
+  }
+
+
+.title-container{
   position: absolute;
 }
-
-.play-button{
-  width: 100px;
-  height: 100px;
+.titleshadow{
+  min-width: 360px;
+  min-height: 57px;
   position: absolute;
-  top: 29%;
-  left: 46%;
+  z-index: 80;
+  top: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  
+}
+.title{
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 295px;
+  max-height: 54px;
+  overflow-y: hidden;
+  font-size: 19px;
+  margin: 8px 34px;
+  text-align: center;
+  }
+.source{
+  color: white;
+  opacity: 0.7;
+  max-width: 198px;
+  font-size: 12px;
+  padding: 1px 6px;
+  position: relative;
+  right: 108px;
+  top: 296px;
+  z-index: 80;
+}
+
+ .bigtitle{
+  color: var(--lmid-color);
+  max-width: 330px;
+  max-height: 20px;
+  overflow-y: hidden;
+  position: relative;
+  top: 29px;
+ }
+ .bsource{
+  color: var(--lmid-color);
+  opacity: 0.7;
+  max-width: 198px;
+  font-size: 12px;
+  padding: 1px 6px;
+  position: relative;
+  right: 92px;
+  top: -8px;
+}
+.videocont{
+  height: 280px;
+  width: 360px;
+  position: relative;
+  background: var(--main-color);
+  border-radius: 14px;
+}
+.poster{
+  position: relative;
+  top: 54%;
+  left: 50%;
   transform: translate(-50%, -50%);
+  height: 202px;
+  width: 360px;
+}
+.playcont{
+  height: 202px;
+  width: 360px;
+  position: absolute;
+  top: 101px;
+  opacity: 0.6;
+  z-index: 81;
+}
+
+.playbt{
+  width: 90px;
+  height: 90px; 
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.playcont:hover {
+opacity: 1; 
 }
 
 
