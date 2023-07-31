@@ -90,15 +90,13 @@ function themee() {
   let child2 = document.querySelector(".navbar");
   child2.classList.toggle("lnavbar");
 }
+/* disable defult downlod php files */
+const links = document.querySelectorAll(".downdis");
+  
+  links.forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault(); 
+      
+    });
+  });
 /* Add Contant */
-export async function onRequest(context) {
-  // Create a prepared statement with our query
-  const ps = context.env.var_r.prepare('SELECT * from users');
-  const data = await ps.first();
-
-  // Print the data to the server logs or console
-  console.log(data);
-
-  return Response.json(data);
-}
-
