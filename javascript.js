@@ -90,15 +90,31 @@ function themee() {
   let child2 = document.querySelector(".navbar");
   child2.classList.toggle("lnavbar");
 }
+/* disable defult downlod php files */
+const links = document.querySelectorAll(".downdis");
+  
+  links.forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault(); 
+      
+    });
+  });
 /* Add Contant */
-export async function onRequest(context) {
-  // Create a prepared statement with our query
-  const ps = context.env.var_r.prepare('SELECT * from users');
-  const data = await ps.first();
+/* sending id  src to videoplayer page */
+const playcontElements = document.querySelectorAll(".playcont");
+playcontElements.forEach(function(element) {
+    element.addEventListener("click", function(event) {
+        const clickedElement = event.target;
+        if (clickedElement.classList.contains("playbt")) {
+            const id = element.id;
+            sendIdToPage2(id);
+            
+        }
+    });
+});
 
-  // Print the data to the server logs or console
-  console.log(data);
-
-  return Response.json(data);
+function sendIdToPage2(id) {
+    localStorage.setItem('elementId', id);
+    window.location.href = 'videoplayer/index.html';
 }
 
