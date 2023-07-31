@@ -242,5 +242,9 @@ window.addEventListener("DOMContentLoaded", function() {
       // If no ID is received, you can show a default video or handle the case as needed
   }
 
+<<<<<<< HEAD
   /* localStorage.removeItem('elementId'); */
+=======
+  localStorage.removeItem('elementId');
+>>>>>>> 98645f3740fd0fcf9b6c66b6689e3204d76ada01
 });
