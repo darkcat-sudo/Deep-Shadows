@@ -219,6 +219,7 @@ video.addEventListener("click", togglePlay)
 
 function togglePlay() {
   video.paused ? video.play() : video.pause()
+  
 }
 
 video.addEventListener("play", () => {
@@ -242,5 +243,42 @@ window.addEventListener("DOMContentLoaded", function() {
       // If no ID is received, you can show a default video or handle the case as needed
   }
 
-  /* localStorage.removeItem('elementId'); */
+
+});
+var elementId = localStorage.getItem('elementId');
+console.log(` Id Value is : '${elementId}' in Local Storage:`);
+window.addEventListener('load', function () {
+    /* setTimeout(togglePlay, 3000);  */
+    console.log("got yeh")
+    video.play().catch(error => {
+      // Video playback failed, handle the error
+      console.log('Video playback failed:');
+      
+    });
+   
+});
+
+/* sending id  src to videoplayer page */
+document.addEventListener("DOMContentLoaded", function () {
+  // Get the current elementId from localStorage (if any)
+  let elementId = localStorage.getItem('elementId');
+
+  const playcontElements = document.querySelectorAll(".playcont");
+  playcontElements.forEach(function (element) {
+    element.addEventListener("click", function (event) {
+      const clickedElement = event.target;
+      if (clickedElement.classList.contains("playbt")) {
+        const id = element.id;
+
+        // Check if the id is different from the current elementId
+        if (id !== elementId) {
+          // Replace the current elementId in localStorage with the new id
+          localStorage.setItem('elementId', id);
+          elementId = id; // Update the current elementId variable
+          console.log(elementId);
+          window.location.reload();
+        }
+      }
+    });
+  });
 });
