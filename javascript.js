@@ -118,3 +118,15 @@ function sendIdToPage2(id) {
     window.location.href = 'videoplayer/index.html';
 }
 
+
+//disable focus for mobile
+function disableAutofocus(element) {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    element.blur();
+  }
+}
+
+// Call the function when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+  disableAutofocus(document.querySelector("input[autofocus]"));
+});

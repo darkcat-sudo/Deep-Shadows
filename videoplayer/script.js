@@ -3,7 +3,6 @@ const theaterBtn = document.querySelector(".theater-btn")
 const fullScreenBtn = document.querySelector(".full-screen-btn")
 const miniPlayerBtn = document.querySelector(".mini-player-btn")
 const muteBtn = document.querySelector(".mute-btn")
-const captionsBtn = document.querySelector(".captions-btn")
 const speedBtn = document.querySelector(".speed-btn")
 const currentTimeElem = document.querySelector(".current-time")
 const totalTimeElem = document.querySelector(".total-time")
@@ -107,17 +106,26 @@ function changePlaybackSpeed() {
   speedBtn.textContent = `${newPlaybackRate}x`
 }
 
-// Captions
-const captions = video.textTracks[0]
-captions.mode = "hidden"
 
-captionsBtn.addEventListener("click", toggleCaptions)
+//progess bar
+const progressBar = document.getElementById('progress-bar');
+video.addEventListener('progress', () => {
+  const bufferedEnd = video.buffered.end(0);
+  const duration = video.duration;
 
-function toggleCaptions() {
-  const isHidden = captions.mode === "hidden"
-  captions.mode = isHidden ? "showing" : "hidden"
-  videoContainer.classList.toggle("captions", isHidden)
-}
+  if (!isNaN(duration)) {
+    // Calculate the percentage of video buffered
+    const bufferedPercent = (bufferedEnd / duration) * 100;
+    // Update the progress bar width accordingly
+    progressBar.style.width = `${bufferedPercent}%`;
+  }
+});
+
+video.addEventListener('canplaythrough', () => {
+  // Hide the progress bar when the video can play without buffering
+  progressBar.style.width = '0';
+});
+
 
 // Duration
 video.addEventListener("loadeddata", () => {

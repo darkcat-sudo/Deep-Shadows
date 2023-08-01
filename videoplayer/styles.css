@@ -153,9 +153,7 @@ video {
   flex-grow: 1;
 }
 
-.video-container.captions .captions-btn {
-  border-bottom: 3px solid red;
-}
+
 
 .video-controls-container .controls button.wide-btn {
   width: 50px;
@@ -168,12 +166,38 @@ video {
   display: flex;
   align-items: center;
 }
+/* preloadbar */
+#progress-bar-container {
+  position: absolute;
+  z-index: 79;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgba(100, 100, 100, .5);
+}
+
+#progress-bar {
+  height: 100%;
+  background-color: rgb(150, 150, 150); /* Set the preload color to green */
+  width: 0; /* Start with a width of 0 (no preload initially) */
+}
+
+#progress-bar::after {
+  content: '';
+  display: block;
+  height: 100%;
+  background-color: rgb(150, 150, 150); /* Set the progress bar color to black */
+}
+
+
 
 .timeline {
+  
   background-color: rgba(100, 100, 100, .5);
   height: 3px;
   width: 100%;
-  position: relative
+  position: relative;
 }
 
 .timeline::before {
@@ -195,6 +219,7 @@ video {
   bottom: 0;
   right: calc(100% - var(--progress-position) * 100%);
   background-color: red;
+  z-index: 80;
 }
 
 .timeline .thumb-indicator {
@@ -208,6 +233,7 @@ video {
   border-radius: 50%;
   transition: transform 150ms ease-in-out;
   aspect-ratio: 1 / 1;
+  z-index: 80;
 }
 
 .timeline .preview-img {
@@ -234,17 +260,17 @@ video {
 }
 
 .video-container.scrubbing .thumbnail-img {
-  display: block;
+  display: none;
 }
 
 .video-container.scrubbing .preview-img,
 .timeline-container:hover .preview-img {
-  display: block;
+  display: none;
 }
 
 .video-container.scrubbing .timeline::before,
 .timeline-container:hover .timeline::before {
-  display: block;
+  display: none;
 }
 
 .video-container.scrubbing .thumb-indicator,
