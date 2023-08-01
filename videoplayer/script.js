@@ -193,6 +193,8 @@ function toggleTheaterMode() {
   videoContainer.classList.toggle("theater")
 }
 
+
+//fullscreenmode
 function toggleFullScreenMode() {
   if (document.fullscreenElement == null) {
     videoContainer.requestFullscreen()
@@ -200,6 +202,12 @@ function toggleFullScreenMode() {
     document.exitFullscreen()
   }
 }
+
+
+
+
+
+
 
 function toggleMiniPlayerMode() {
   if (videoContainer.classList.contains("mini-player")) {

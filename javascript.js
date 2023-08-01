@@ -119,14 +119,20 @@ function sendIdToPage2(id) {
 }
 
 
-//disable focus for mobile
-function disableAutofocus(element) {
-  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    element.blur();
+
+
+
+//loading
+const videoConts = document.querySelectorAll(".videocont");
+
+function stopAnimationAndRemoveClasses() {
+  for (const videoCont of videoConts) {
+    if (videoCont.classList.contains("loading-animation") || videoCont.classList.contains("loadingvideo-cont")) {
+      videoCont.classList.remove("loading-animation");
+      videoCont.classList.remove("loadingvideo-cont");
+    }
   }
 }
 
-// Call the function when the page loads
-document.addEventListener("DOMContentLoaded", function() {
-  disableAutofocus(document.querySelector("input[autofocus]"));
-});
+setTimeout(stopAnimationAndRemoveClasses, 8000); // 5000 milliseconds (5 seconds)
+
