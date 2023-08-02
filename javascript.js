@@ -122,17 +122,49 @@ function sendIdToPage2(id) {
 
 
 
-//loading
-const videoConts = document.querySelectorAll(".videocont");
 
-function stopAnimationAndRemoveClasses() {
-  for (const videoCont of videoConts) {
-    if (videoCont.classList.contains("loading-animation") || videoCont.classList.contains("loadingvideo-cont")) {
-      videoCont.classList.remove("loading-animation");
-      videoCont.classList.remove("loadingvideo-cont");
+
+
+
+
+//views
+
+  // Function to format view count with 'k' or 'm' suffix
+  function formatViewCount(views) {
+    if (views >= 1000000) {
+      var roundedValue = Math.floor(views / 100000) / 10;
+      return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'm';
+    } else if (views >= 10000) {
+      return Math.floor(views / 1000) + 'k';
+    } else if (views >= 1000) {
+      var roundedValue = Math.floor(views / 100) / 10;
+      return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'k';
+    } else {
+      return views;
     }
   }
-}
 
-setTimeout(stopAnimationAndRemoveClasses, 8000); // 5000 milliseconds (5 seconds)
+  // Function to display full unformatted view count
+  function showFullView(views) {
+    return views.toLocaleString();
+  }
+
+  // Get the view count element and update its content
+  var viewCountElement = document.querySelector('.view-count');
+  var views = parseInt(viewCountElement.getAttribute('data-views'));
+  viewCountElement.textContent = formatViewCount(views);
+
+  // Toggle between formatted and unformatted views
+  function toggleView() {
+    var formattedView = formatViewCount(views);
+    var fullView = showFullView(views);
+    viewCountElement.textContent = viewCountElement.textContent === formattedView ? fullView : formattedView;
+
+    // Auto-revert to formatted view after 3 seconds
+    setTimeout(function() {
+      viewCountElement.textContent = formattedView;
+    }, 4000);
+  }
+
+
 
