@@ -34,7 +34,7 @@
                 
             </div>
              
-            <a class="downdis" href="upload.html" target="_self">Upload Videos</a>
+            <a class="downdis" href="index.html" target="_self">Home</a>
             <a class="downdis" href="authphp/login.php" target="_self">Log in</a>
             <a class="downdis" href="authphp/" target="_self">Profile</a>
           </div>  
@@ -64,10 +64,119 @@
     <div onclick="mui()" class="bac"></div>
     <div class="navbar-gap"></div>
    <!--  Explore window  -->
+<div class="form-container">
+   <form id="videoForm">
+    <label for="num">Num:</label>
+    <input type="text" id="num" name="num"><br>
+  
+    <label for="titles">Titles:</label>
+    <input type="text" id="titles" name="titles"><br>
+  
+    <label for="link_id">Link ID:</label>
+    <input type="text" id="link_id" name="link_id"><br>
+  
+    <label for="source">Source:</label>
+    <input type="text" id="source" name="source"><br>
+  
+    <label for="thumbnail">Thumbnail Link:</label>
+    <input type="text" id="thumbnail" name="thumbnail"><br>
+  
+    <label for="uploader">Uploader:</label>
+    <input type="text" id="uploader" name="uploader"><br>
+  
+    <label for="uploader_pic">Uploader Picture Link:</label>
+    <input type="text" id="uploader_pic" name="uploader_pic"><br>
+  
+    <input type="submit" name="submit" value="Submit">
+  </form>
+</div>
+
+<style>
+
+
+.form-container {
+max-width: 85%;
+margin: 20px auto;
+padding: 20px;
+border: 1px solid #ccc;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+text-align: center;
+margin-bottom: 30px;
+}
+
+/* Form styles */
+form {
+display: flex;
+flex-wrap: wrap;
+}
+
+form label {
+flex-basis: 100%;
+margin-bottom: 8px;
+}
+
+form input[type="text"] {
+flex-basis: calc(50% - 16px);
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-bottom: 16px;
+}
+
+form input[type="submit"] {
+flex-basis: 100%;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+/* Edit form styles */
+.edit-form {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+border: 1px solid #ccc;
+background-color: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.edit-form label {
+display: block;
+margin-bottom: 8px;
+}
+
+.edit-form input[type="text"] {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-bottom: 16px;
+}
+
+.edit-form input[type="submit"] {
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 4px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+</style>
     <main class="main" >
+        
            
         <div class="first-rows">
-
+                  
 
             <div class="video-thumnail"> 
                 <div class="uploader-container">
@@ -105,146 +214,7 @@
                 </div>      
              </div>
 
-             <div class="video-thumnail"> 
-                <div class="uploader-container">
-                    <img class="profile-img" src="https://drive.google.com/uc?export=download&id=1XxUTkoSDPmHrQVdNPnGuTx6fWc0YK5Zn">
-                     <h3>Anonymous</h3>
-                     <div class="badge-container">
-                        <svg class="badge-items" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
-                            <path fill="red" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
-                          </svg>
-                          <svg class="badge-items" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="blue" viewBox="0 0 16 20">
-                            <path d="M8 5.625c4.418 0 8-1.063 8-2.375S12.418.875 8 .875 0 1.938 0 3.25s3.582 2.375 8 2.375Zm0 13.5c4.963 0 8-1.538 8-2.375v-4.019c-.052.029-.112.054-.165.082a8.08 8.08 0 0 1-.745.353c-.193.081-.394.158-.6.231l-.189.067c-2.04.628-4.165.936-6.3.911a20.601 20.601 0 0 1-6.3-.911l-.189-.067a10.719 10.719 0 0 1-.852-.34 8.08 8.08 0 0 1-.493-.244c-.053-.028-.113-.053-.165-.082v4.019C0 17.587 3.037 19.125 8 19.125Zm7.09-12.709c-.193.081-.394.158-.6.231l-.189.067a20.6 20.6 0 0 1-6.3.911 20.6 20.6 0 0 1-6.3-.911l-.189-.067a10.719 10.719 0 0 1-.852-.34 8.08 8.08 0 0 1-.493-.244C.112 6.035.052 6.01 0 5.981V10c0 .837 3.037 2.375 8 2.375s8-1.538 8-2.375V5.981c-.052.029-.112.054-.165.082a8.08 8.08 0 0 1-.745.353Z"/>
-                          </svg>
-                          <svg class="badge-items" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="red" viewBox="0 0 20 14">
-                            <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM2 12V6h16v6H2Z"/>
-                            <path d="M6 8H4a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2Zm8 0H9a1 1 0 0 0 0 2h5a1 1 0 1 0 0-2Z"/>
-                          </svg>
-                     </div>
-                </div>
-                    <div class="titleshadow">
-                        <p class="title">Tasty Travels: Exploring Global Flavors </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                    <div  class="views-container">
-                        <div onclick="toggleView()"  class="view-count" data-views="123567">0</div>
-                        <svg onclick="toggleView()" class="views-icon" xmlns="http://www.w3.org/2000/svg" width="64pt" height="64pt" viewBox="0 0 64 64" style="isolation:isolate" id="visible"><defs><clipPath id="a"><rect width="64" height="64"></rect></clipPath></defs><g clip-path="url(#a)"><path fill="#ff0000" d=" M 61.56 33.818 C 56.474 42.521 45.056 49.591 32 49.591 C 18.944 49.591 7.526 42.521 2.44 33.818 C 1.853 32.815 1.853 31.185 2.44 30.182 C 7.526 21.479 18.944 14.409 32 14.409 C 45.056 14.409 56.474 21.479 61.56 30.182 C 62.147 31.185 62.147 32.815 61.56 33.818 Z  M 19.207 32 C 19.207 24.94 24.94 19.207 32 19.207 C 39.06 19.207 44.793 24.94 44.793 32 C 44.793 39.06 39.06 44.793 32 44.793 C 24.94 44.793 19.207 39.06 19.207 32 Z "></path><path d=" M 21.7 32 C 21.7 26.315 26.315 21.7 32 21.7 C 37.685 21.7 42.3 26.315 42.3 32 C 42.3 37.685 37.685 42.3 32 42.3 C 26.315 42.3 21.7 37.685 21.7 32 Z "></path></g></svg>
-                         
-                    </div>
-                <div class="videocont">
-                    <img class="poster" src="https://drive.google.com/uc?export=download&id=1mivvu30Seu9axGrpe3s2IA6z7c_o4oCg">
-                </div>
-                <div id="17-LAa5NkEox9WTYnCpN7SehtaGY4I6PN" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">Wanderlust Diaries: Exploring [Destination]</p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1MLWd0cOVTUpzxn5bUm-Bioq0U-Id3qs0">
-                </div>
-                <div id="1MLWd0cOVTUpzxn5bUm-Bioq0U-Id3qs0" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">Discovering [Destination]: A Travel Adventure </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1VFhXA-7MB8LrjijsmlfDxbYVCQIP-WNG">
-                </div>
-                <div id="1VFhXA-7MB8LrjijsmlfDxbYVCQIP-WNG" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">Sun, Sand, and Sea: [Destination] Vacation Vlog </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1qATCy__d0CvUBK7b0GPwwj07hWwpzFxu">
-                </div>
-                <div id="1qATCy__d0CvUBK7b0GPwwj07hWwpzFxu" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">The Creppy Videos of the World 2023 Subscribe for more videos </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <img class="poster" src="https://drive.google.com/uc?export=download&id=1Gw9MwY_Vbbssxdfx9hPhuQJj0M7e10v3">
-                </div>
-                <div id="18QJwm2bK5ng77xtgXdDPK5oMaaKVYChh" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">The Videos of the World 2023 Subscribe for more videos </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1VBE17MKGAp2lZz3m8uaTulvp4RckmCl0">
-                <div id="1VBE17MKGAp2lZz3m8uaTulvp4RckmCl0" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-              
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">The Creppy Videos of the World 2023 Subscribe for more videos </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1mivvu30Seu9axGrpe3s2IA6z7c_o4oCg">
-                </div>
-                <div id="17-LAa5NkEox9WTYnCpN7SehtaGY4I6PN" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
-
-             <div class="video-thumnail"> 
-                <div class="uploader-container"></div>
-                    <div class="titleshadow">
-                        <p class="title">The Creppy Videos of the World 2023 Subscribe for more videos </p>
-                    </div>
-                     
-                    <p class="source">🔥 Project Dark Knight</p> 
-                <div class="videocont">
-                    <video class="poster" src="https://drive.google.com/uc?export=download&id=1mivvu30Seu9axGrpe3s2IA6z7c_o4oCg">
-                </div>
-                <div id="17-LAa5NkEox9WTYnCpN7SehtaGY4I6PN" class="playcont">
-                    <img class="playbt" src="files/play.png" alt="Play">
-                </div>      
-             </div>
+             
              
            
              
@@ -256,10 +226,7 @@
         
     <!-- </main> -->
 
-    <div class="loading-container">
-        <div class="loading-div loading-animation"></div>
-      </div>
-      <button onclick="stopAnimation()">Stop Animation</button>
+
       
     
 
@@ -272,4 +239,6 @@
 
 </body>
 <script src="javascript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="submit.js"></script>
 </html>

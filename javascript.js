@@ -129,42 +129,54 @@ function sendIdToPage2(id) {
 
 //views
 
-  // Function to format view count with 'k' or 'm' suffix
-  function formatViewCount(views) {
-    if (views >= 1000000) {
-      var roundedValue = Math.floor(views / 100000) / 10;
-      return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'm';
-    } else if (views >= 10000) {
-      return Math.floor(views / 1000) + 'k';
-    } else if (views >= 1000) {
-      var roundedValue = Math.floor(views / 100) / 10;
-      return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'k';
-    } else {
-      return views;
-    }
+function formatViewCount(views) {
+  if (views >= 1000000) {
+    var roundedValue = Math.floor(views / 100000) / 10;
+    return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'm';
+  } else if (views >= 10000) {
+    return Math.floor(views / 1000) + 'k';
+  } else if (views >= 1000) {
+    var roundedValue = Math.floor(views / 100) / 10;
+    return roundedValue.toFixed(roundedValue % 1 !== 0 ? 1 : 0) + 'k';
+  } else {
+    return views;
   }
+}
 
-  // Function to display full unformatted view count
-  function showFullView(views) {
-    return views.toLocaleString();
-  }
+// Function to display full unformatted view count
+function showFullView(views) {
+  return views.toLocaleString();
+}
 
-  // Get the view count element and update its content
-  var viewCountElement = document.querySelector('.view-count');
-  var views = parseInt(viewCountElement.getAttribute('data-views'));
-  viewCountElement.textContent = formatViewCount(views);
+// Get all view count elements and update their content
+var viewCountElements = document.querySelectorAll('.view-count');
+viewCountElements.forEach(function(element) {
+  var views = parseInt(element.getAttribute('data-views'));
+  element.textContent = formatViewCount(views);
+});
 
-  // Toggle between formatted and unformatted views
-  function toggleView() {
-    var formattedView = formatViewCount(views);
-    var fullView = showFullView(views);
-    viewCountElement.textContent = viewCountElement.textContent === formattedView ? fullView : formattedView;
+// Toggle between formatted and unformatted views
+function toggleView() {
+  var formattedViews = Array.from(viewCountElements).map(function(element) {
+    return formatViewCount(parseInt(element.getAttribute('data-views')));
+  });
 
-    // Auto-revert to formatted view after 3 seconds
-    setTimeout(function() {
-      viewCountElement.textContent = formattedView;
-    }, 4000);
-  }
+  var fullViews = Array.from(viewCountElements).map(function(element) {
+    return showFullView(parseInt(element.getAttribute('data-views')));
+  });
+
+  viewCountElements.forEach(function(element, index) {
+    element.textContent = element.textContent === formattedViews[index] ? fullViews[index] : formattedViews[index];
+  });
+
+  // Auto-revert to formatted view after 3 seconds
+  setTimeout(function() {
+    viewCountElements.forEach(function(element, index) {
+      element.textContent = formattedViews[index];
+    });
+  }, 4000);
+}
+
 
 
 
